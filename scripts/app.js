@@ -13,3 +13,8 @@ cerrarModal.addEventListener('click', (e) => {
     e.preventDefault();
     modal.classList.remove('modal--mostrar');
 });
+
+modal.addEventListener('click', (e) => {
+    e.preventDefault();
+    modal.classList.remove('modal--mostrar');
+});

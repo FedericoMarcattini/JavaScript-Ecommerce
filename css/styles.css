@@ -133,20 +133,7 @@ a {
 
 .modal-cerrar {
     text-decoration: none;
-    color: white;
-    background-color: var(--color-main);
-    padding: .7rem 3rem;
-    border: 1px solid;
-    border-radius: .5rem;
-    display: inline-block;
-    font-weight: 600;
     transition: background-color .1s;
-}
-
-.modal-cerrar:hover {
-    background-color: var(--color-gray);
-    color: var(--color-main);
-    border: 1px solid;
 }
 
 /***** CARRITO *****/
