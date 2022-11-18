@@ -50,6 +50,7 @@ a {
     justify-content: space-between;
     padding-inline: 3rem;
     position: sticky;
+    z-index: 1;
     top: 0;
 }
 
@@ -64,14 +65,90 @@ a {
     font-weight: 600;
 }
 
-.header-item,
-.header-carrito {
+.header-item {
     color: var(--color-main);
 }
 
 .header-item:hover {
     color: #af2d4e;
 }
+
+.header-carrito {
+    margin-left: 1.5rem;
+    padding-block: .2rem;
+    padding-inline: .4rem;
+    border-radius: .3rem;
+    background-color: var(--color-main);
+    color: white;
+}
+
+.header-carrito:hover {
+    color: var(--color-gray);
+}
+
+.numerito {
+    margin-left: .5rem;
+}
+
+/****** MODAL ******/
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(105, 105, 105, 0.356);
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s .4s;
+    --transform: translateY(-100vh);
+    --transition: transform .4s;
+}
+
+.modal--mostrar {
+    opacity: 1;
+    pointer-events: unset;
+    transition: opacity .2s;
+    --transform: translateY(0);
+    --transition: transform .4s .4s;
+}
+
+.modal-contenido {
+    margin: auto;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90%;
+    background-color: white;
+    border-radius: .5rem;
+    padding: 1.5rem;
+    gap: 1rem;
+    place-items: center;
+    grid-auto-columns: 100%;
+    transform: var(--transform);
+    transition: var(--transition);
+}
+
+.modal-cerrar {
+    text-decoration: none;
+    color: white;
+    background-color: var(--color-main);
+    padding: .7rem 3rem;
+    border: 1px solid;
+    border-radius: .5rem;
+    display: inline-block;
+    font-weight: 600;
+    transition: background-color .1s;
+}
+
+.modal-cerrar:hover {
+    background-color: var(--color-gray);
+    color: var(--color-main);
+    border: 1px solid;
+}
+
+/****** GALLERY ******/
 
 .main {
     width: 100%;
