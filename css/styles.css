@@ -105,6 +105,7 @@ a {
     transition: opacity .2s .4s;
     --transform: translateY(-100vh);
     --transition: transform .4s;
+    z-index: 1;
 }
 
 .modal--mostrar {
@@ -118,7 +119,7 @@ a {
 .modal-contenido {
     margin: auto;
     width: 90%;
-    max-width: 600px;
+    max-width: 900px;
     max-height: 90%;
     background-color: white;
     border-radius: .5rem;
@@ -146,6 +147,97 @@ a {
     background-color: var(--color-gray);
     color: var(--color-main);
     border: 1px solid;
+}
+
+/***** CARRITO *****/
+
+.carrito-productos {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    /* gap: 1rem; */
+}
+
+.carrito-productos-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.carrito-productos-header a i {
+    color: black;
+}
+
+.carrito-productos-header a i:hover {
+    color: rgb(198, 3, 3);
+}
+
+.carrito-producto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-gray);
+    color: var(--color-main);
+    padding: .5rem;
+    padding-right: 1.5rem;
+    border-radius: 1rem;
+}
+
+.carrito-producto-img {
+    width: 4rem;
+    border-radius: 1rem;
+}
+
+.carrito-producto small {
+    font-size: .75rem;
+}
+
+.carrito-producto-eliminar {
+    border: 0;
+    background-color: transparent;
+    color: var(--color-main);
+    cursor: pointer;
+}
+
+.carrito-acciones {
+    display: flex;
+    justify-content: space-between;
+}
+
+.carrito-acciones-vaciar {
+    border: 0;
+    background-color: var(--color-gray);
+    padding: 1rem;
+    border-radius: 1rem;
+    color: var(--color-main);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.carrito-acciones-derecha {
+    display: flex;
+}
+
+.carrito-acciones-total {
+    display: flex;
+    background-color: var(--color-gray);
+    padding: 1rem;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    color: var(--color-main);
+    text-transform: uppercase;
+    gap: 1rem;
+}
+
+.carrito-acciones-comprar {
+    border: 0;
+    background-color: var(--color-main);
+    padding: 1rem;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
 }
 
 /****** GALLERY ******/
