@@ -142,7 +142,6 @@ a {
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
-    /* gap: 1rem; */
 }
 
 .carrito-productos-header {
@@ -317,8 +316,15 @@ a {
 }
 
 .tienda-item {
+    border: 0;
+    background-color: transparent;
     color: var(--color-main);
+    font-size: 1rem;
     font-weight: 600;
+}
+
+.active {
+    color: black;
 }
 
 .buscar {
@@ -373,14 +379,12 @@ a {
 
 .producto-img {
     max-width: 100%;
-    /* border-radius: 1rem; */
     border-top-right-radius: 1rem;
     border-top-left-radius: 1rem;
 }
 
 .card-info {
     background-color: var(--color-gray);
-    /* border-radius: 1rem; */
     border-bottom-right-radius: 1rem;
     border-bottom-left-radius: 1rem;
     padding: .5rem;

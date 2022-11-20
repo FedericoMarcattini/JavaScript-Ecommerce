@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script defer src="./scripts/productos.js"></script>
         <script defer src="./scripts/app.js"></script>
+        <!-- <script defer src="./scripts/carrito.js"></script> -->
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 
@@ -37,7 +39,7 @@
                 <a class="header-item" href="">Contacto</a>
             </li>
             <li>
-                <a class="header-carrito" href=""><i class="bi bi-cart-fill"></i><span class="numerito">0</span></a>
+                <a class="header-carrito" href=""><i class="bi bi-cart-fill"></i><span id="numerito" class="numerito">0</span></a>
             </li>
         </div>
     </div>
@@ -45,12 +47,14 @@
     <section class="modal">
         <div class="modal-contenido">
 
-            <div class="carrito-productos">
+            <div id="carrito-productos" class="carrito-productos disabled">
 
                 <div class="carrito-productos-header">
                     <h3>Carrito de compras</h3>
                     <a href="#" class="modal-cerrar"><i class="bi bi-x-square-fill"></i></a>
                 </div>
+
+                <p id="carrito-vacio" class="carrito-vacio">Tu carrito esta vacío</p>
                     
                 <div class="carrito-producto">
                     <img class="carrito-producto-img" src="./assets/productos/01.png" alt="">
@@ -76,37 +80,13 @@
 
                     <button class="carrito-producto-eliminar"><i class="bi bi-trash-fill"></i></button>
                 </div>
+
+                <p id="carrito-comprado" class="carrito-comprado disabled">Muchas gracias por tu compra</p>
+
             </div>
 
-            <div class="carrito-productos">
-                    
-                <div class="carrito-producto">
-                    <img class="carrito-producto-img" src="./assets/productos/02.png" alt="">
-                    <div class="carrito-producto-titulo">
-                        <small>Título</small>
-                        <h3>Producto 2</h3>
-                    </div>
 
-                    <div class="carrito-producto-cantidad">
-                        <small>Cantidad</small>
-                        <p>1</p>
-                    </div>
-
-                    <div class="carrito-producto-precio">
-                        <small>Precio</small>
-                        <p>$3500</p>
-                    </div>
-
-                    <div class="carrito-producto-subtotal">
-                        <small>Subtotal</small>
-                        <p>$3500</p>
-                    </div>
-
-                    <button class="carrito-producto-eliminar"><i class="bi bi-trash-fill"></i></button>
-                </div>
-            </div>
-
-            <div class="carrito-acciones">
+            <div id="carrito-acciones" class="carrito-acciones">
 
                 <div class="carrito-acciones-izquierda">
                     <button class="carrito-acciones-vaciar">Vaciar Carrito</button>
@@ -145,16 +125,16 @@
 
             <div class="tienda-items">
                 <li>
-                    <a class="tienda-item" href="">Todas las bebidas</a>
+                    <button id="todos" class="tienda-item categoria active" href="">Todas las bebidas</button>
                 </li>
                 <li>
-                    <a class="tienda-item" href="">Vinos</a>
+                    <button id="vinos" class="tienda-item categoria" href="">Vinos</button>
                 </li>
                 <li>
-                    <a class="tienda-item" href="">Otras bebidas</a>
+                    <button id="otras-bebidas" class="tienda-item categoria" href="">Otras bebidas</button>
                 </li>
                 <li>
-                    <a class="tienda-item" href="">Combos para tu fiesta</a>
+                    <button id="combos" class="tienda-item categoria" href="">Combos para tu fiesta</button>
                 </li>
 
                 <div class="buscar">
@@ -167,135 +147,8 @@
             
         </div>
 
-        <div class="cards-tienda">
-
-            <div class="card-tienda">
-                <img class="producto-img" src="./assets/productos/01.png" alt="">
-                <div class="card-info">
-                    <h3 class="producto-titulo">Producto 1</h3>
-                    <p class="producto-precio">$3500</p>
-                    <div class="producto-botones">
-                        <div class="producto-cantidad">
-                            <span class="menos">-</span>
-                            <span class="numero">01</span>
-                            <span class="mas">+</span>
-                        </div>
-                        <button class="producto-agregar">Agregar</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-tienda">
-                <img class="producto-img" src="./assets/productos/02.png" alt="">
-                <div class="card-info">
-                    <h3 class="producto-titulo">Producto 2</h3>
-                    <p class="producto-precio">$3500</p>
-                    <div class="producto-botones">
-                        <div class="producto-cantidad">
-                            <span class="menos">-</span>
-                            <span class="numero">01</span>
-                            <span class="mas">+</span>
-                        </div>
-                        <button class="producto-agregar">Agregar</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-tienda">
-                <img class="producto-img" src="./assets/productos/03.png" alt="">
-                <div class="card-info">
-                    <h3 class="producto-titulo">Producto 3</h3>
-                    <p class="producto-precio">$3500</p>
-                    <div class="producto-botones">
-                        <div class="producto-cantidad">
-                            <span class="menos">-</span>
-                            <span class="numero">01</span>
-                            <span class="mas">+</span>
-                        </div>
-                        <button class="producto-agregar">Agregar</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-tienda">
-                <img class="producto-img" src="./assets/productos/04.png" alt="">
-                <div class="card-info">
-                    <h3 class="producto-titulo">Producto 4</h3>
-                    <p class="producto-precio">$3500</p>
-                    <div class="producto-botones">
-                        <div class="producto-cantidad">
-                            <span class="menos">-</span>
-                            <span class="numero">01</span>
-                            <span class="mas">+</span>
-                        </div>
-                        <button class="producto-agregar">Agregar</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-tienda">
-                <img class="producto-img" src="./assets/productos/05.png" alt="">
-                <div class="card-info">
-                    <h3 class="producto-titulo">Producto 5</h3>
-                    <p class="producto-precio">$3500</p>
-                    <div class="producto-botones">
-                        <div class="producto-cantidad">
-                            <span class="menos">-</span>
-                            <span class="numero">01</span>
-                            <span class="mas">+</span>
-                        </div>
-                        <button class="producto-agregar">Agregar</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-tienda">
-                <img class="producto-img" src="./assets/productos/06.png" alt="">
-                <div class="card-info">
-                    <h3 class="producto-titulo">Producto 6</h3>
-                    <p class="producto-precio">$3500</p>
-                    <div class="producto-botones">
-                        <div class="producto-cantidad">
-                            <span class="menos">-</span>
-                            <span class="numero">01</span>
-                            <span class="mas">+</span>
-                        </div>
-                        <button class="producto-agregar">Agregar</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-tienda">
-                <img class="producto-img" src="./assets/productos/07.png" alt="">
-                <div class="card-info">
-                    <h3 class="producto-titulo">Producto 7</h3>
-                    <p class="producto-precio">$3500</p>
-                    <div class="producto-botones">
-                        <div class="producto-cantidad">
-                            <span class="menos">-</span>
-                            <span class="numero">01</span>
-                            <span class="mas">+</span>
-                        </div>
-                        <button class="producto-agregar">Agregar</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-tienda">
-                <img class="producto-img" src="./assets/productos/08.png" alt="">
-                <div class="card-info">
-                    <h3 class="producto-titulo">Producto 8</h3>
-                    <p class="producto-precio">$3500</p>
-                    <div class="producto-botones">
-                        <div class="producto-cantidad">
-                            <span class="menos">-</span>
-                            <span class="numero">01</span>
-                            <span class="mas">+</span>
-                        </div>
-                        <button class="producto-agregar">Agregar</button>
-                    </div>
-                </div>
-            </div>
+        <div id="cards-tienda" class="cards-tienda">
+            <!-- Esto se va a rellenar con JS -->
         </div>
 
         <footer class="footer">
