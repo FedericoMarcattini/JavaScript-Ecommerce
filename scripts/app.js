@@ -41,14 +41,16 @@ function cargarProductos(productosElegidos) {
             <h3 class="producto-titulo">${producto.titulo}</h3>
             <p class="producto-precio">$${producto.precio}</p>
             <div class="producto-botones">
-                <div class="producto-cantidad">
-                    <span class="menos">-</span>
-                    <span class="numero">01</span>
-                    <span class="mas">+</span>
-                </div>
+
                 <button class="producto-agregar" id="${producto.id}" >Agregar</button>
             </div>
         `;
+
+    //     <div class="producto-cantidad">
+    //     <span class="menos">-</span>
+    //     <span class="numero">01</span>
+    //     <span class="mas">+</span>
+    // </div>
 
         cardsTienda.append(div);
     })
@@ -110,8 +112,8 @@ function actualizarNumerito() {
 
 /*** CARRITO ***/
 
-productosEnCarrito = JSON.parse(localStorage.getItem("productos-en-carrito"));
-console.log(productosEnCarrito);
+// productosEnCarrito = JSON.parse(localStorage.getItem("productos-en-carrito"));
+// console.log(productosEnCarrito);
 
 // const contenedorCarritoVacio = document.querySelector("#carrito-productos");
 // const contenedorCarritoProductos = document.querySelector("#carrito-productos");
